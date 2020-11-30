@@ -1,0 +1,15 @@
+# enable natural scrolling
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
+
+# enable tap to click
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
+
+# lower trackpoint sensitivity
+xinput set-prop "ETPS/2 Elantech TrackPoint" "libinput Accel Speed" -0.5
+
+# reload autorandr hoping that it detects the current setup
+autorandr sp_pool
+
+# other stuff
+# set background to same as last time
+sh ~/.fehbg

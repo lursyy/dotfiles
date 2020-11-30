@@ -1,0 +1,2 @@
+#!/bin/sh
+'feh' '--bg-max' '/home/luisb/.cache/himawaripy/output.png' 
