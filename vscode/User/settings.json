@@ -1,0 +1,67 @@
+// VS Code Settings
+// Luis Beaucamp
+
+{
+    "workbench.startupEditor": "newUntitledFile",
+
+    "workbench.colorTheme": "Darcula",
+    // "workbench.colorCustomizations": {
+    //     "activityBarBadge.background": "#388E3C",
+    //     "list.activeSelectionForeground": "#388E3C",
+    //     "list.inactiveSelectionForeground": "#388E3C",
+    //     "list.highlightForeground": "#388E3C",
+    //     "scrollbarSlider.activeBackground": "#388E3C50",
+    //     "editorSuggestWidget.highlightForeground": "#388E3C",
+    //     "textLink.foreground": "#388E3C",
+    //     "progressBar.background": "#388E3C",
+    //     "pickerGroup.foreground": "#388E3C",
+    //     "tab.activeBorder": "#388E3C"
+    // },
+    
+    "editor.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": false,
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false,
+    "editor.suggestSelection": "first",
+    "editor.mouseWheelZoom": true,
+
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.saturation": 0.8,
+
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+    "terminal.integrated.cursorStyle": "line",
+
+    "javascript.suggest.completeFunctionCalls": true,
+    "typescript.suggest.completeFunctionCalls": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "cmake.configureOnOpen": false,
+
+    "arduino.path": "C:\\Program Files (x86)\\Arduino",
+    "arduino.additionalUrls": [
+        "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
+    ],
+    "platformio-ide.activateOnlyOnPlatformIOProject": true,
+    
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "explorer.confirmDelete": false,
+    
+    "python.pythonPath": "python", // just use the one on the path
+    "python.autoComplete.addBrackets": true,
+    
+    "markdownlint.config": {
+        "MD041": false,
+        "MD012": false,
+        "MD047": false,
+        "MD033": false,
+        "MD004": false,
+    },
+
+    "todo-tree.highlights.useColourScheme": true
+}
