@@ -112,5 +112,19 @@
         "key": "ctrl+alt+v",
         "command": "-extension.pasteImage",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "notifications.clearAll"
+    },
+    {
+        "key": "f5",
+        "command": "latex-workshop.build",
+        "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "-latex-workshop.build",
+        "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
     }
 ]

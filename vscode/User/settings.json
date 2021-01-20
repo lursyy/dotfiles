@@ -4,7 +4,14 @@
 {
     "workbench.startupEditor": "newUntitledFile",
 
-    "workbench.colorTheme": "Darcula",
+    "theme-by-language.themes": {
+        "*": "Darcula",
+        "latex": "GitHub Plus",
+        "bibtex": "GitHub Plus"
+    },
+    "workbench.colorTheme": "Darcula", // don't change this directly. use theme-by-language.themes instead
+    
+    // "workbench.colorTheme": "Darcula",
     // "workbench.colorCustomizations": {
     //     "activityBarBadge.background": "#388E3C",
     //     "list.activeSelectionForeground": "#388E3C",
@@ -18,12 +25,13 @@
     //     "tab.activeBorder": "#388E3C"
     // },
     
-    "editor.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'Cascadia Code PL Semilight', Consolas, 'Courier New', monospace",
     "editor.fontLigatures": false,
     "editor.renderWhitespace": "none",
     "editor.renderControlCharacters": false,
     "editor.suggestSelection": "first",
     "editor.mouseWheelZoom": true,
+    
 
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.folders.theme": "specific",
@@ -45,7 +53,7 @@
     ],
     "platformio-ide.activateOnlyOnPlatformIOProject": true,
     
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
 
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
@@ -63,5 +71,51 @@
         "MD004": false,
     },
 
-    "todo-tree.highlights.useColourScheme": true
+    "todo-tree.highlights.useColourScheme": true,
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoBuild.interval": 10000, // only every 10 s
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.view.outline.labels.enabled": false,
+    
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+              "latexmk"
+            ],
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ],
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode"
+            ]
+        }
+    ],
+
+    "[latex]": {
+        "editor.wordWrap": "on",
+        "editor.occurrencesHighlight": false,
+        "editor.formatOnPaste": false,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.fontFamily": "Verdana",
+        "editor.fontSize": 14,        
+    },
+    "latex-workshop.view.pdf.viewer": "tab",
+    
+    "bracket-pair-colorizer-2.excludedLanguages": ["latex"],
+    "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+
+    
 }
