@@ -3,13 +3,14 @@
 
 {
     "workbench.startupEditor": "newUntitledFile",
-
+    
     "theme-by-language.themes": {
-        "*": "Darcula",
+        "*": "GitHub Plus",
         "latex": "GitHub Plus",
-        "bibtex": "GitHub Plus"
+        "bibtex": "GitHub Plus",
+        "markdown": "GitHub Plus"
     },
-    "workbench.colorTheme": "Darcula", // don't change this directly. use theme-by-language.themes instead
+    "workbench.colorTheme": "GitHub Plus",
     
     // "workbench.colorTheme": "Darcula",
     // "workbench.colorCustomizations": {
@@ -27,11 +28,10 @@
     
     "editor.fontFamily": "'Cascadia Code PL Semilight', Consolas, 'Courier New', monospace",
     "editor.fontLigatures": false,
-    "editor.renderWhitespace": "none",
+    "editor.renderWhitespace": "selection",
     "editor.renderControlCharacters": false,
     "editor.suggestSelection": "first",
     "editor.mouseWheelZoom": true,
-    
 
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.folders.theme": "specific",
@@ -39,6 +39,7 @@
 
     "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
     "terminal.integrated.cursorStyle": "line",
+    "terminal.external.windowsExec": "C:\\Users\\luisb\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\\wt.exe",
 
     "javascript.suggest.completeFunctionCalls": true,
     "typescript.suggest.completeFunctionCalls": true,
@@ -55,12 +56,14 @@
     
     "diffEditor.ignoreTrimWhitespace": true,
 
+    "git.fetchOnPull": true,
+    "git.showPushSuccessNotification": true,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
     "vsicons.dontShowNewVersionMessage": true,
     "explorer.confirmDelete": false,
     
-    "python.pythonPath": "python", // just use the one on the path
+    "python.pythonPath": "C:\\Python39\\python.exe", // just use the one on the path
     "python.autoComplete.addBrackets": true,
     
     "markdownlint.config": {
@@ -72,12 +75,53 @@
     },
 
     "todo-tree.highlights.useColourScheme": true,
+    "todo-tree.regex.regex": "((//|#|%|<!--|;|/\\*|^|\\\\)\\s*($TAGS)|^\\s*- \\[ \\])",
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "todo",
+        "XXX"
+    ],
+    "todo-tree.general.tagGroups": {
+        "TODO": ["TODO", "todo"]
+    },
+
+//TODO asdasd
+    "zenMode.hideLineNumbers": false,
+    "editor.foldingStrategy": "indentation",
+
+    "spellright.notificationClass": "warning",
+    "spellright.spellContextByClass": {
+        "latex": "body" // only check body, not comments
+    },
+
+
+    "ltex.latex.commands": {
+        "\\label{}": "ignore",
+        "\\documentclass[]{}": "ignore",
+        "\\cite{}": "dummy",
+        "\\cite[]{}": "dummy",
+        "\\todo{}": "ignore",
+        "\\todoin{}": "ignore",
+        "\\draft{}": "ignore",
+        "\\question{}": "ignore",
+        "\\questioninline{}": "ignore"
+    },
+
+    "ltex.latex.environments": {
+        "lstlisting": "ignore",
+        "verbatim": "ignore"
+    },
+
     "latex-workshop.latex.recipe.default": "lastUsed",
     "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.latex.autoBuild.interval": 10000, // only every 10 s
     "latex-workshop.message.error.show": false,
     "latex-workshop.view.outline.labels.enabled": false,
-    
+    "latex-workshop.view.pdf.spreadMode": 1,
+
     "latex-workshop.latex.recipes": [
         {
             "name": "latexmk 🔃",
@@ -104,18 +148,131 @@
         }
     ],
 
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+
     "[latex]": {
-        "editor.wordWrap": "on",
+        "editor.wrappingStrategy": "advanced",
         "editor.occurrencesHighlight": false,
-        "editor.formatOnPaste": false,
         "editor.suggestSelection": "recentlyUsedByPrefix",
         "editor.fontFamily": "Verdana",
-        "editor.fontSize": 14,        
+        "editor.fontSize": 15,
+        "editor.wordWrap": "on"
     },
     "latex-workshop.view.pdf.viewer": "tab",
     
     "bracket-pair-colorizer-2.excludedLanguages": ["latex"],
     "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+    "spellright.language": [
+        "de",
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex"
+    ],
 
-    
+    "files.exclude": {
+        // general        
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+
+        // specific to MA thesis
+        "**/_config": true,
+        "**/.vscode": true,
+        "**/.latexmkrc": true,
+        
+        // Latex stuff
+        "**/*.aux": true,
+        "**/*.lof": true,
+        "**/*.log": true,
+        "**/*.lot": true,
+        "**/*.lol": true,
+        "**/*.fls": true,
+        "**/*.out": true,
+        "**/*.toc": true,
+        "**/*.fmt": true,
+        "**/*.fot": true,
+        "**/*.cb": true,
+        "**/*.cb2": true,
+        "**/.*.lb": true,
+        "**/*.bbl": true,
+        "**/*.bcf": true,
+        "**/*.blg": true,
+        "**/*.ilg": true,
+        "**/*.brf": true,
+        "**/*-blx.aux": true,
+        "**/*-blx.bib": true,
+        "**/*.run.xml": true,
+        "**/*.fdb_latexmk": true,
+        "**/*.synctex": true,
+        "**/*.synctex(busy)": true,
+        "**/*.synctex.gz": true,
+        "**/*.synctex.gz(busy)": true,
+        "**/*.pdfsync": true,
+        "**/*.idx": true,
+        "**/*.acn": true,
+        "**/*.acr": true,
+        "**/*.alg": true,
+        "**/*.glg": true,
+        "**/*.glo": true,
+        "**/*.gls": true,
+        "**/*.ist": true,
+        "**/*.ind": true,
+    },
+
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "python.showStartPage": false,
+    "python.analysis.completeFunctionParens": true,
+    "python.linting.enabled": true,
+    "workbench.editor.untitled.hint": "hidden",
+    "python.defaultInterpreterPath": "/usr/bin/python",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.editor.wrapTabs": true,
 }
